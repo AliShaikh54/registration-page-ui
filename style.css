@@ -1,0 +1,215 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Blurred colorful background */
+.background {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 30% 40%, #6aa9ff, transparent 40%),
+              radial-gradient(circle at 70% 60%, #7fe0d4, transparent 40%),
+              linear-gradient(135deg, #b8c6ff, #fbc2eb);
+  filter: blur(40px);
+  z-index: -2;
+}
+
+/* Glass card */
+.border {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  max-width: 900px;
+  width: 90%;
+  height: 500px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  overflow-x: hidden;
+}
+
+/* Form area */
+.form-section {
+  width: 350px;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 12px;
+}
+
+label {
+  font-size: 14px;
+}
+
+input {
+  background: rgba(255, 255, 255, 0.7);
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: none;
+  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.2);
+  border-radius: 9px;
+  outline: none;
+}
+
+input.error-border {
+  border: 2px solid red;
+}
+
+input.success-border {
+  border: 2px solid green;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  min-height: 14px;  /* keeps layout stable */
+  display: block;
+}
+
+/* Submit button */
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #8b80ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #6f66e9;
+}
+
+/* Illustration (your existing styles kept) */
+.clipboard {
+  width: 220px;
+  height: 300px;
+  background: #f1f2ff;
+  border-radius: 24px;
+  border: 8px solid #8b80ff;
+  position: relative;
+  box-shadow: 0px 2px 6px black;
+}
+
+.clip {
+  width: 90px;
+  height: 40px;
+  background: #8b80ff;
+  border-radius: 12px 12px 20px 20px;
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  background: #8b80ff;
+  border-radius: 50%;
+  margin: 30px auto 10px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0px 2px 6px black;
+}
+
+.avatar::before {
+  content: "";
+  width: 28px;
+  height: 28px;
+  background: white;
+  border-radius: 50%;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.avatar::after {
+  content: "";
+  width: 42px;
+  height: 20px;
+  background: white;
+  border-radius: 20px 20px 8px 8px;
+  display: block;
+}
+
+.lines {
+  padding: 0 30px;
+  margin-top: 15px;
+}
+
+.line {
+  height: 8px;
+  background: #ffb3c7;
+  border-radius: 10px;
+  margin: 12px 0;
+  box-shadow: 0px 1px 6px black; 
+}
+
+.pen {
+  width: 12px;
+  height: 120px;
+  background: #8b80ff;
+  position: absolute;
+  right: 110px;
+  bottom: 40px;
+  transform: rotate(-25deg);
+  border-radius: 6px;
+  box-shadow: 0px 1px 6px 1px black; 
+}
+
+.pen::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 55%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 10px solid #8b80ff;
+}
+
+.brand-text{
+  position: absolute;
+  bottom: 10px;
+  left: 40%;
+  font-family: 'Times New Roman', Times, serif;
+}
+@media (max-width: 500px) {
+  .clipboard {
+    display: none;  /* hide illustration to save space */
+  }
+
+  .border {
+    padding: 15px;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+  }
+}
